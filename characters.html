@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personagens de RPG</title>
+    <style>
+        /* Adicione o CSS aqui */
+        body {
+            background-color: #222;
+            color: #fff;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .character {
+            display: inline-block;
+            margin: 10px;
+            cursor: pointer;
+            border: 2px solid #b8860b;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #444;
+            text-align: center;
+            transition: transform 0.2s;
+            width: 200px; /* Defina a largura desejada */
+            height: 300px; /* Defina a altura desejada */
+        }
+
+        .character:hover {
+            transform: scale(1.1);
+        }
+
+        .character img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        #character-info {
+            background-color: #111;
+            border: 2px solid #b8860b;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="character-info">
+        <!-- Aqui será exibida a ficha de RPG do personagem selecionado -->
+    </div>
+    <div class="character" onclick="showCharacterInfo('Personagem 1')">
+        <img src="https://i.imgur.com/OPymJ0O.jpg" alt="Beatrice">
+        <p>Beatrice</p>
+    </div>
+    <div class="character" onclick="showCharacterInfo('morgan')">
+        <img src="https://imgur.com/GYbdqJ5.jpg" alt="morgan">
+        <p>Morgan</p>
+    </div>
+    <div class="character" onclick="showCharacterInfo('Baijin')">
+        <img src="https://imgur.com/it5vacX.jpg" alt="Bainjin">
+        <p>Bainjin</p>
+    </div>
+    <div class="character" onclick="showCharacterInfo('Shinsuke')">
+        <img src="https://imgur.com/niR9Emd.jpg" alt="Shinsuke">
+        <p>Shinsuke</p>
+    </div>
+    <div class="character" onclick="showCharacterInfo('Kira')">
+        <img src="https://imgur.com/TirN2e9.jpg" alt="Kira">
+        <p>Kira</p>
+    </div>
+    <div class="character" onclick="showCharacterInfo('Indra')">
+        <img src="https://imgur.com/359Jhbs.jpg" alt="Indra">
+        <p>Indra</p>
+    </div>
+    <div class="character" onclick="showCharacterInfo('Ochthallus')">
+        <img src="https://imgur.com/qRLoU0v.jpg" alt="Ochthallus">
+        <p>Ochthallus</p>
+    </div>
+    <div class="character" onclick="showCharacterInfo('Hydra')">
+        <img src="https://imgur.com/ssdooWP.jpg" alt="Hydra">
+        <p>Hydra</p>
+    </div>
+    <div class="character" onclick="showCharacterInfo('Personagem 9')">
+        <img src="personagem9.jpg" alt="Personagem 9">
+        <p>Personagem 9</p>
+    </div>
+
+    <script>
+        function showCharacterInfo(characterName) {
+            const characterInfo = document.getElementById('character-info');
+            characterInfo.innerHTML = `
+                <h2>${characterName}</h2>
+                <p>Character information for ${characterName} goes here.</p>
+            `;
+        }
+    </script>
+</body>
+</html>
+

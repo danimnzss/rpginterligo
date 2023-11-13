@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Fundo preto */
+            color: #fff; /* Cor do texto */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .rectangle {
+            width: 200px; /* Largura aumentada */
+            height: 300px; /* Altura aumentada */
+            border: 2px solid #FFD700; /* Cor da borda dourada fosca */
+            margin: 10px;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 5px 5px 5px #888888;
+            position: relative;
+        }
+
+        .rectangle img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .arrow img {
+            max-width: 50px;
+            max-height: 50px;
+            cursor: pointer;
+        }
+
+        .cube {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 30px; /* Largura do cubo */
+            height: 30px; /* Altura do cubo */
+            background-color: #888888; /* Cor cinza */
+            border: 2px solid #FFD700; /* Cor da borda dourada fosca */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .cube:hover {
+            background-color: #000; /* Cor preta ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="rectangle">
+                <img src="https://imgur.com/RZzmse6.jpg" alt="Imagem 1">
+            </div>
+            <div class="rectangle">
+                <img src="https://imgur.com/c3CqiP7.jpg" alt="Imagem 2">
+            </div>
+            <div class="rectangle">
+                <img src="https://imgur.com/RhPEgBG.jpg" alt="Imagem 3">
+            </div>
+            <div class="rectangle">
+                <img src="https://imgur.com/6KHT2BB.jpg" alt="Imagem 4">
+                <div class="cube">></div>
+            </div>
+        </div>
+        <div class="arrow">
+            <img src="seta.png" alt="Seta">
+        </div>
+        <div class="row">
+            <div class="rectangle">
+                <img src="imagem5.jpg" alt="Imagem 5">
+            </div>
+            <div class="rectangle">
+                <img src="imagem6.jpg" alt="Imagem 6">
+            </div>
+            <div class="rectangle">
+                <img src="imagem7.jpg" alt="Imagem 7">
+            </div>
+            <div class="rectangle">
+                <img src="imagem8.jpg" alt="Imagem 8">
+                <div class="cube">></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const arrow = document.querySelector('.arrow img');
+            const secondRow = document.querySelector('.row:last-child');
+
+            arrow.addEventListener('click', function() {
+                secondRow.classList.toggle('show');
+            });
+        });
+    </script>
+</body>
+</html>
+
+

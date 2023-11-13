@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('seu-fundo-de-rpg.jpg'); /* Adicione uma imagem de fundo temática de RPG */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #1d1d1d;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: rgba(51, 51, 51, 0.8); /* Fundo com transparência */
+            border: 2px solid red; /* Bordas vermelhas */
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #FFD700; /* Cor dourada para o título */
+        }
+
+        .dice {
+            font-size: 64px;
+            border: 2px solid #777;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2974a9;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #FFD700; /* Cor dourada para o texto */
+        }
+    </style>
+    <title>RPG Dado de 20 Lados</title>
+</head>
+<body>
+    <div class="container">
+        <h1>RPG Dado de 20 Lados</h1>
+        <div class="dice" id="dice">?</div>
+        <button id="rollButton">Rolar o Dado</button>
+        <p id="result">Resultado: </p>
+    </div>
+
+    <script>
+        function rollDice() {
+            return Math.floor(Math.random() * 20) + 1;
+        }
+
+        function getDiceResultMessage(result) {
+            const messages = [
+                "Você foi mal!",
+                "Bleeh!",
+                "Não foi muito bom...",
+                "Tente novamente!",
+                "Nada de bom aconteceu...",
+                "Quase lá, mas não deu!",
+                "Hmmm... sem sorte!",
+                "Isso não foi ótimo!",
+                "Mais sorte da próxima vez!",
+                "Não foi o seu dia...",
+                "Não foi uma rolagem estelar...",
+                "Foi quase bom!",
+                "Poderia ser melhor...",
+                "Hmm... não foi incrível!",
+                "Não foi uma vitória.",
+                "Quase, mas não o suficiente!",
+                "Você quase conseguiu!",
+                "Apenas mais um número...",
+                "Quase épico!",
+                "Foi quase lendário!"
+            ];
+
+            return messages[result - 1];
+        }
+
+        const diceElement = document.getElementById('dice');
+        const resultElement = document.getElementById('result');
+        const rollButton = document.getElementById('rollButton');
+
+        rollButton.addEventListener('click', function () {
+            const result = rollDice();
+            diceElement.textContent = result;
+            resultElement.textContent = "Resultado: " + getDiceResultMessage(result);
+        });
+    </script>
+</body>
+</html>
+
